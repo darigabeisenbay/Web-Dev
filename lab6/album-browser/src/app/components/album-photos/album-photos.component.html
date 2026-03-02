@@ -1,0 +1,13 @@
+<div class="container">
+  <button (click)="goBack()">Back to Album</button>
+  <h2>Photos of Album #{{ albumId }}</h2>
+  
+  <div class="photo-grid">
+    @for (photo of photos; track photo.id) {
+      <div class="photo-card">
+        <img [src]="'https://placehold.co/150x150?text=' + photo.id" [alt]="photo.title">
+        <p class="photo-title">{{ photo.title }}</p>
+      </div>
+    }
+  </div>
+</div>

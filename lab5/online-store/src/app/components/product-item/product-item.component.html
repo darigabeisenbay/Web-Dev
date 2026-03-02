@@ -1,0 +1,18 @@
+<div class="product-card">
+  <img [src]="product.image" alt="{{product.name}}">
+  <h3>{{product.name}}</h3>
+  <p>{{product.description}}</p>
+  
+  <div class="stats">
+    <span>⭐ {{product.rating}}</span>
+    <span class="likes-count">❤️ {{product.likes}}</span> 
+  </div>
+
+  <div class="actions">
+    <button (click)="increaseLikes()" class="like-btn">Like</button>
+    
+    <button (click)="onDelete()" class="delete-btn">🗑 Delete</button>
+    
+    <button (click)="shareWhatsApp()">Share</button>
+  </div>
+</div>

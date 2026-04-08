@@ -3,10 +3,8 @@ from rest_framework.routers import DefaultRouter
 
 from . import views
 
-router = DefaultRouter()
-router.register('categories', views.CategoryViewSet)
-router.register('products', views.ProductViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('products/', views.ProductListAPIView.as_view(), name='product-list'),
+    path('products/<int:pk>/', views.ProductDetailAPIView.as_view(), name='product-detail'),
 ]
